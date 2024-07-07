@@ -1,6 +1,6 @@
 # WeAct Pins
 
-![alt text](image-1.png)
+![alt text](Images/image-1.png)
 
 ## Buttons & LED
 
@@ -18,7 +18,7 @@
 
 ## Peripherals
 
-![alt text](image.png)
+![alt text](Images/image.png)
 
 #### Micro SD (U5)
 

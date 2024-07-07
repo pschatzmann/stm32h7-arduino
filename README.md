@@ -1,15 +1,17 @@
 
 # STM32H7XX
 
-There are different cheap but powerful development boards with different STM32H7 chips.
+There are different cheap but powerful Chinese development boards with different __STM32H7__ chips.
 The STM32H7XX processors are based on the 32-bit Arm Cortex®-M7 core, running at up to 600 MHz. They have plenty of RAM and Flash Memory and have a FPU for fast double-precision floating calculations. In addition you also have plenty of pins (> 88) available!
 
-I am not a big fan of the STM Cube IDE and find the approach of using generated code a bit "retro". Fortunately we can use __Arduino__. Because these boards are not well documented, I am taking the oppurtunity to demonstrate how to use them with Arduino.
+I am not a big fan of the STM Cube IDE and find the approach of using generated code a bit "retro". Fortunately we can use __Arduino__. 
+
+Because these boards are not well documented, I am taking the oppurtunity to demonstrate how to use them with Arduino.
 
 - STM32H750VBT6 - 128K flash
 - STM32H743VIT6 - 2048K flash
 
-I recommend to use the STM32H743VIT6 with 2MB of flash memory. Please note that this is still only half of what you get with an ESP32! 
+I recommend to use the STM32H743VIT6 with 2MB of flash memory. Please note that this is still only half of what you get with an ESP32 but you get an SD drive and 8MB SPI/QSPI Flash!  
 
 - [Common Arduino example sketches](examples/Common)
 
@@ -22,7 +24,7 @@ I recommend to use the STM32H743VIT6 with 2MB of flash memory. Please note that 
 
 ### WeAct
 
-- [Hardware information](https://github.com/WeActStudio/MiniSTM32H7xx)
+- [Hardware information](docs/WeAct/README.md)
 - [Technical Drawing](https://github.com/WeActStudio/MiniSTM32H7xx/blob/master/HDK/STM32H7xx%20SchDoc%20V11.pdf)
 - [Pin Information](docs/WeAct/Pins.md)
 - [The Arduino example sketches](examples/WeAct)
