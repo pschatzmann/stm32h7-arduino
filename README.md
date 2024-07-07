@@ -57,3 +57,4 @@ I recommend to use a [STLink Programmer](https://www.aliexpress.com/item/1005005
     - in -> Tools -> Usart Support - Enabled (generic serial)
 
 You are ready now to compile and upload the sketch the regular way.
+Please note that you still need the USB connection to see the Serial output!
