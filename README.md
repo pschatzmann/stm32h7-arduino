@@ -6,17 +6,27 @@ The STM32H7XX processors are based on the 32-bit Arm Cortex®-M7 core, running a
 
 I am not a big fan of the STM Cube IDE and find the approach of using generated code a bit "retro". Fortunately we can use __Arduino__. Because these boards are not well documented, I am taking the oppurtunity to demonstrate how to use them with Arduino.
 
-### DevEBox
-
 - STM32H750VBT6 - 128K flash
 - STM32H743VIT6 - 2048K flash
 
-![board](docs/DevEBox/STM32H7XX_M.jpg)
-
 I recommend to use the STM32H743VIT6 with 2MB of flash memory. Please note that this is still only half of what you get with an ESP32! 
 
-- [Further hardware details can be found here](docs/DevEBox/README.md)
-- [The example sketches can be found here](examples/DevEBox)
+- [Common Arduino example sketches](examples/Common)
+
+### DevEBox
+
+- [Hardware information](docs/DevEBox/README.md)
+- [Techical Drawing](docs/DevEBox/STM32H7XX_M_schematics.pdf)
+- [Pin Information](docs/DevEBox/Pins.md)
+- [The Arduino example sketches](examples/DevEBox)
+
+### WeAct
+
+- [Hardware information](https://github.com/WeActStudio/MiniSTM32H7xx)
+- [Technical Drawing](https://github.com/WeActStudio/MiniSTM32H7xx/blob/master/HDK/STM32H7xx%20SchDoc%20V11.pdf)
+- [Pin Information](docs/WeAct/Pins.md)
+- [The Arduino example sketches](examples/WeAct)
+
 
 ### Software Requirements
 
@@ -58,3 +68,8 @@ I recommend to use a [STLink Programmer](https://www.aliexpress.com/item/1005005
 
 You are ready now to compile and upload the sketch the regular way.
 Please note that you still need the USB connection to see the Serial output!
+
+
+## License
+
+Licensed under the [MIT License](http://opensource.org/licenses/MIT).
