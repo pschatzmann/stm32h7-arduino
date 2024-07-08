@@ -11,6 +11,9 @@
 
 void setup() {
     Serial.begin(115200);
+
+    // wait for Serial to be ready
+    while(!Serial);
 }
 
 void loop() {

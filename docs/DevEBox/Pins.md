@@ -5,6 +5,7 @@
 - PE3 (K1)
 - PC5 (K2)
 
+The buttons are active low.
 
 #### User LED (D2)
 
