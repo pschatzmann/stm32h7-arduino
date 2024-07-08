@@ -99,8 +99,5 @@ Connect the Boot0 to the 3V3 pin to enable Flash Mode.
 - GND
 
 
-## Flashing device via USB cable
-
-Enable the flash mode by connecting the SWD Boot0 pin with the adjecent 3V3 pin
 
 

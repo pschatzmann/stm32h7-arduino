@@ -5,7 +5,7 @@ There are two versions with different STM32H7 chips:
 - STM32H750VBT6 - 128K flash
 - STM32H743VIT6 - 2048K flash
 
-I recommend to use the STM32H743VIT6 with 2MB of flash memory. Please note that this is still only half of what you get with an ESP32! 
+I recommend to use the STM32H743VIT6 with 2MB of flash memory. 
 
 ![board](STM32H7XX_M.jpg)
 
@@ -55,10 +55,8 @@ I recommend to use the STM32H743VIT6 with 2MB of flash memory. Please note that 
 - M3 mounting holes
 - Dimensions: 40.89mm x 68.59mm
 
-## Futher Information
+## How to enter ISP mode (for Upload)
 
-- [STM32H750VB on st.com](https://www.st.com/en/microcontrollers-microprocessors/stm32h750vb.html)
-- [STM32H743VI on st.com](https://www.st.com/en/microcontrollers-microprocessors/stm32h743vi.html)
-- [STM32H7XX_M schematics](https://github.com/mcauser/MCUDEV_DEVEBOX_H7XX_M/blob/master/docs/STM32H7XX_M_schematics.pdf)
-- [External Loader](https://controllerstech.com/w25q-flash-series-part-10-qspi-ext-loader-in-h750/)
+Enable the flash mode by connecting the SWD Boot0 pin with the adjecent 3V3 pin and then reboot. After you have flashed the device remove the connection and reboot again.
+
 
