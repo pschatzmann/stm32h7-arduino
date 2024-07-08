@@ -19,7 +19,7 @@ void setup()
 {
   bool disp = false;
   // Open serial communications and wait for port to open:
-  Serial.begin(44100);
+  Serial.begin(115200);
   while (!Serial);
 
   // setup SD Pins for DevEBox MCU
