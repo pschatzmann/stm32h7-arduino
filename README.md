@@ -71,6 +71,11 @@ I recommend to use a [ST-Link Programmer](https://www.aliexpress.com/item/100500
 You are now ready to compile and upload the sketch the regular way.
 Please note that you still need the USB connection to see the Serial output!
 
+## Common PINS
+
+![alt text](sd.png)
+
+
 ## Futher Information
 
 - [STM32H750VB on st.com](https://www.st.com/en/microcontrollers-microprocessors/stm32h750vb.html)

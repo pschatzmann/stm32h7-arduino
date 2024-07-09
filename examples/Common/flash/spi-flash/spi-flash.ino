@@ -1,7 +1,6 @@
-#include "FlashW25QXX.h"
-#include "SPI.h"
+#include "QSPI.h"
 
-FlashW25QXX flash;
+QSPI flash;
 
 void setup() {
   // setup Serial
@@ -13,6 +12,8 @@ void setup() {
   SPI.setMISO(PD13);
   SPI.setMOSI(PD12);
   SPI.setSCLK(PB2);
+
+  
   SPI.begin();
 
   // setup flash

@@ -48,29 +48,34 @@ class QSPI : public Stream {
 
   /// QUADSPI init function
   bool begin(void) {
-    // prepare QSPI peripheral for ST-Link Utility operations
+    MPU_Config();
     hqspi.Instance = QUADSPI;
-    if (HAL_QSPI_DeInit(&hqspi) != HAL_OK) {
-      return false;
-    }
-
     init();
 
-    if (!reset()) {
+    if (HAL_QSPI_DeInit(&hqspi) != HAL_OK) {
+      Serial.println("HAL_QSPI_DeInit");
       return false;
     }
+
+    // if (!reset()) {
+    //   Serial.println("reset");
+    //   //return false;
+    // }
 
     HAL_Delay(1);
 
     if (!wait()) {
+      Serial.println("wait");
       return false;
     }
 
     if (!setWriteEnabled()) {
+      Serial.println("setWriteEnabled");
       return false;
     }
 
     if (!setQuadMode()) {
+      Serial.println("setQuadMode");
       return false;
     }
 
@@ -269,8 +274,8 @@ class QSPI : public Stream {
       }
 
       /* Transmission of the data */
-      if (HAL_QSPI_Transmit(&hqspi, (uint8_t*) buffer, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) !=
-          HAL_OK) {
+      if (HAL_QSPI_Transmit(&hqspi, (uint8_t*)buffer,
+                            HAL_QPSI_TIMEOUT_DEFAULT_VALUE) != HAL_OK) {
         current_pos += result;
         if (current_pos > max_current_pos) max_current_pos = current_pos;
         return result;
@@ -466,6 +471,7 @@ class QSPI : public Stream {
     hqspi.Init.FlashID = QSPI_FLASH_ID_1;
     hqspi.Init.DualFlash = QSPI_DUALFLASH_DISABLE;
     if (HAL_QSPI_Init(&hqspi) != HAL_OK) {
+      Serial.println("init");
       Error_Handler();
     }
   }
@@ -479,6 +485,7 @@ class QSPI : public Stream {
       PeriphClkInitStruct.PeriphClockSelection = RCC_PERIPHCLK_QSPI;
       PeriphClkInitStruct.QspiClockSelection = RCC_QSPICLKSOURCE_D1HCLK;
       if (HAL_RCCEx_PeriphCLKConfig(&PeriphClkInitStruct) != HAL_OK) {
+        Serial.println("HAL_RCCEx_PeriphCLKConfig");
         Error_Handler();
       }
 
@@ -544,6 +551,7 @@ class QSPI : public Stream {
 
     if ((ret = HAL_QSPI_Command(&hqspi, &sCommand,
                                 HAL_QPSI_TIMEOUT_DEFAULT_VALUE)) != HAL_OK) {
+      Serial.println("RESET_ENABLE_CMD");
       return false;
     }
 
@@ -560,6 +568,7 @@ class QSPI : public Stream {
 
     if ((ret = HAL_QSPI_Command(&hqspi, &sCommand,
                                 HAL_QPSI_TIMEOUT_DEFAULT_VALUE)) != HAL_OK) {
+      Serial.println("RESET_EXECUTE_CMD");
       return false;
     }
 
@@ -588,6 +597,7 @@ class QSPI : public Stream {
 
     if ((ret = HAL_QSPI_Command(&hqspi, &sCommand,
                                 HAL_QPSI_TIMEOUT_DEFAULT_VALUE)) != HAL_OK) {
+      Serial.println("WRITE_ENABLE_CMD");
       return false;
     }
 
@@ -605,6 +615,7 @@ class QSPI : public Stream {
     if ((ret = HAL_QSPI_AutoPolling(&hqspi, &sCommand, &sConfig,
                                     HAL_QPSI_TIMEOUT_DEFAULT_VALUE)) !=
         HAL_OK) {
+      Serial.println("HAL_QSPI_AutoPolling");
       return false;
     }
     return true;
@@ -634,11 +645,13 @@ class QSPI : public Stream {
 
     if ((ret = HAL_QSPI_Command(&hqspi, &sCommand,
                                 HAL_QPSI_TIMEOUT_DEFAULT_VALUE)) != HAL_OK) {
+      Serial.println("READ_STATUS_REG2_CMD");
       return false;
     }
 
     if ((ret = HAL_QSPI_Receive(&hqspi, &reg,
                                 HAL_QPSI_TIMEOUT_DEFAULT_VALUE)) != HAL_OK) {
+      Serial.println("HAL_QSPI_Receive");
       return false;
     }
 
@@ -649,6 +662,7 @@ class QSPI : public Stream {
 
     if (HAL_QSPI_Command(&hqspi, &sCommand, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) !=
         HAL_OK) {
+      Serial.println("VOLATILE_SR_WRITE_ENABLE");
       return false;
     }
 
@@ -659,11 +673,13 @@ class QSPI : public Stream {
 
     if (HAL_QSPI_Command(&hqspi, &sCommand, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) !=
         HAL_OK) {
+      Serial.println("HAL_QPSI_TIMEOUT_DEFAULT_VALUE");
       return false;
     }
 
     if (HAL_QSPI_Transmit(&hqspi, &reg, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) !=
         HAL_OK) {
+      Serial.println("HAL_QSPI_Transmit");
       return false;
     }
 
@@ -681,11 +697,13 @@ class QSPI : public Stream {
 
     if ((ret = HAL_QSPI_Command(&hqspi, &sCommand,
                                 HAL_QPSI_TIMEOUT_DEFAULT_VALUE)) != HAL_OK) {
+      Serial.println("READ_STATUS_REG3_CMD");
       return false;
     }
 
     if ((ret = HAL_QSPI_Receive(&hqspi, &reg,
                                 HAL_QPSI_TIMEOUT_DEFAULT_VALUE)) != HAL_OK) {
+      Serial.println("HAL_QSPI_Receive");
       return false;
     }
 
@@ -695,16 +713,41 @@ class QSPI : public Stream {
 
     if (HAL_QSPI_Command(&hqspi, &sCommand, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) !=
         HAL_OK) {
+      Serial.println("WRITE_STATUS_REG3_CMD");
       return false;
     }
 
     if (HAL_QSPI_Transmit(&hqspi, &reg, HAL_QPSI_TIMEOUT_DEFAULT_VALUE) !=
         HAL_OK) {
+      Serial.println("HAL_QSPI_Transmit");
       return false;
     }
 
     return true;
   }
 
+  void MPU_Config(void) {
+    MPU_Region_InitTypeDef MPU_InitStruct = {0};
 
+    /* Disables the MPU */
+    HAL_MPU_Disable();
+
+    /** Initializes and configures the Region and the memory to be protected
+     */
+    MPU_InitStruct.Enable = MPU_REGION_ENABLE;
+    MPU_InitStruct.Number = MPU_REGION_NUMBER0;
+    MPU_InitStruct.BaseAddress = 0x90000000;
+    MPU_InitStruct.Size = MPU_REGION_SIZE_8MB;
+    MPU_InitStruct.SubRegionDisable = 0;
+    MPU_InitStruct.TypeExtField = MPU_TEX_LEVEL0;
+    MPU_InitStruct.AccessPermission = MPU_REGION_FULL_ACCESS;
+    MPU_InitStruct.DisableExec = MPU_INSTRUCTION_ACCESS_ENABLE;
+    MPU_InitStruct.IsShareable = MPU_ACCESS_NOT_SHAREABLE;
+    MPU_InitStruct.IsCacheable = MPU_ACCESS_CACHEABLE;
+    MPU_InitStruct.IsBufferable = MPU_ACCESS_BUFFERABLE;
+
+    HAL_MPU_ConfigRegion(&MPU_InitStruct);
+    /* Enables the MPU */
+    HAL_MPU_Enable(MPU_PRIVILEGED_DEFAULT);
+  }
 };
