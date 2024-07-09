@@ -79,9 +79,12 @@ Please note that you still need the USB connection to see the Serial output!
 ## Futher Information
 
 - [STM32H750VB on st.com](https://www.st.com/en/microcontrollers-microprocessors/stm32h750vb.html)
+- [STM32H750VBTx Pins](https://github.com/STMicroelectronics/STM32_open_pin_data/blob/master/mcu/STM32H750VBTx.xml)
 - [STM32H743VI on st.com](https://www.st.com/en/microcontrollers-microprocessors/stm32h743vi.html)
+- [STM32H743VIT6 Pins](https://github.com/STMicroelectronics/STM32_open_pin_data/blob/master/mcu/STM32H743VITx.xml)
 - [STM32H7XX_M schematics](https://github.com/mcauser/MCUDEV_DEVEBOX_H7XX_M/blob/master/docs/STM32H7XX_M_schematics.pdf)
 - [External Loader](https://controllerstech.com/w25q-flash-series-part-10-qspi-ext-loader-in-h750/)
+
 
 
 ## License
