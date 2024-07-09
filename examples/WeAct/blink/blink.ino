@@ -1,3 +1,11 @@
+/**
+ * Just a short demo how to use the LED pin. 
+ * We define our own constant but you maybe better use the LED_BUILTIN
+ * which is provided by the board mapping.
+ * @author Phil Schatzmann
+ */
+
+
 #define LED PE3
 
 // the setup function runs once when you press reset or power the board

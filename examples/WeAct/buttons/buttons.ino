@@ -1,6 +1,13 @@
+/**
+ * Just a short demo how to use the buttons
+ * We define our own constant but you maybe better use the LED_BUILTIN and
+ * BTN_K1 or USER_BTN which are provided by the board variant.
+ * @author Phil Schatzmann
+ */
+
 // constants won't change. They're used here to set pin numbers:
 const int buttonPin = PC13;  // the number of the pushbutton pin
-const int ledPin = PE3;    // the number of the LED pin
+const int ledPin = PE3;      // the number of the LED pin
 
 void setup() {
   // initialize the LED pin as an output:

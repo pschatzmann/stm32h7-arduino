@@ -20,6 +20,8 @@ The buttons are active low.
 - PC8  D0  DO (MISO)
 - PC9  D1  -
 
+You need to use a library that supports the SM32 SDMMC API and Pins
+
 ```C++
   // setup SD Pins for DevEBox MCU
   card.setDx(PC8, PC9, PC10, PC11);

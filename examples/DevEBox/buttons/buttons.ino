@@ -1,7 +1,14 @@
+/**
+ * Just a short demo how to use the buttons
+ * We define our own constant but you maybe better use the LED_BUILTIN,BTN_K1
+ * and BTN_K2 which are provided by the board variant.
+ * @author Phil Schatzmann
+ */
+
 // constants won't change. They're used here to set pin numbers:
 const int buttonK1Pin = PE3;  // the number of the pushbutton pin
 const int buttonK2Pin = PC5;  // the number of the pushbutton pin
-const int ledPin = PA1;    // the number of the LED pin
+const int ledPin = PA1;       // the number of the LED pin
 
 // variables will change:
 bool buttonPressed;  // variable for reading the pushbutton status
@@ -16,7 +23,8 @@ void setup() {
 
 void loop() {
   Serial.begin(115200);
-  // read the state of the pushbutton value: active is low -> so we invert the result
+  // read the state of the pushbutton value: active is low -> so we invert the
+  // result
   bool buttonPressed1 = !digitalRead(buttonK1Pin);
   bool buttonPressed2 = !digitalRead(buttonK2Pin);
   Serial.print(buttonPressed1);
