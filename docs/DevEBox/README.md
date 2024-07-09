@@ -7,7 +7,7 @@ There are two versions with different STM32H7 chips:
 
 I recommend to use the STM32H743VIT6 with 2MB of flash memory. 
 
-![board](STM32H7XX_M.jpg)
+![board](DevEBox.jpg)
 
 ## Specifications
 

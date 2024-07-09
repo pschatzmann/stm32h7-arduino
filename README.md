@@ -16,12 +16,16 @@ I am not a big fan of the __STM Cube IDE__ and find the approach of using genera
 
 ### DevEBox
 
+![DevEbox](docs/DevEBox/DevEBox.jpg) 
+
 - [Board specific example Arduino sketches](examples/DevEBox)
 - [Pin Information](docs/DevEBox/Pins.md)
 - [Hardware information](docs/DevEBox/README.md)
 - [Techical Drawing](docs/DevEBox/STM32H7XX_M_schematics.pdf)
 
 ### WeAct
+
+![WeAct](docs/WeAct/Images/image-0.png)
 
 - [Board specific example Arduino sketches](examples/WeAct)
 - [Pin Information](docs/WeAct/Pins.md)
@@ -70,10 +74,6 @@ I recommend to use a [ST-Link Programmer](https://www.aliexpress.com/item/100500
 
 You are now ready to compile and upload the sketch the regular way.
 Please note that you still need the USB connection to see the Serial output!
-
-## Common PINS
-
-![alt text](sd.png)
 
 
 ## Futher Information
