@@ -12,13 +12,11 @@ The STM32H7XX processors are based on the 32-bit Arm Cortex®-M7 core, running a
 
 I am not a big fan of the __STM Cube IDE__ and find the approach of using generated code a bit "retro". Fortunately we can use __Arduino__.  Because this not well documented, I am taking the oppurtunity to demonstrate how to use them with Arduino:
 
-- [Common Arduino example sketches](examples/Common)
 
 ### DevEBox
 
 ![DevEbox](docs/DevEBox/DevEBox.jpg) 
 
-- [Board specific example Arduino sketches](examples/DevEBox)
 - [Pin Information](docs/DevEBox/Pins.md)
 - [Hardware information](docs/DevEBox/README.md)
 - [Techical Drawing](docs/DevEBox/STM32H7XX_M_schematics.pdf)
@@ -27,7 +25,6 @@ I am not a big fan of the __STM Cube IDE__ and find the approach of using genera
 
 ![WeAct](docs/WeAct/Images/image-0.png)
 
-- [Board specific example Arduino sketches](examples/WeAct)
 - [Pin Information](docs/WeAct/Pins.md)
 - [Hardware information](docs/WeAct/README.md)
 - [Technical Drawing](https://github.com/WeActStudio/MiniSTM32H7xx/blob/master/HDK/STM32H7xx%20SchDoc%20V11.pdf)
@@ -35,8 +32,18 @@ I am not a big fan of the __STM Cube IDE__ and find the approach of using genera
 
 ### Software Requirements
 
+- Install [Arduino](https://support.arduino.cc/hc/en-us/articles/360019833020-Download-and-install-Arduino-IDE) (if not already done)
 - Install the [STMDuino Arduno Core](https://github.com/stm32duino)
 - Install the [STMCubeProgrammer](https://www.st.com/en/development-tools/stm32cubeprog.html): This is needed to upload the compiled sketch
+
+
+### Example Sketches
+
+- [Common Arduino example sketches](examples/Common) Flash, qspi, SD...
+- [WeAct specific example Arduino sketches](examples/WeAct) LED, buttons
+- [Board specific example Arduino sketches](examples/DevEBox) LED, buttons
+
+- [FreeRTOS](https://github.com/stm32duino/STM32FreeRTOS/tree/main/examples)
 
 
 ### Compile and Upload

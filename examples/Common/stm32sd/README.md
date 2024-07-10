@@ -1,6 +1,12 @@
 # Using the stm32duino STM32SD library
 
-This library is using SD card slots connected to the SDIO-/SDMMC-hardware of the processor. This is much faster then the alternative libraries which use SPI
+Install the following libraries
+
+- https://github.com/stm32duino/STM32SD
+- https://github.com/stm32duino/FatFs
+
+
+This is using SD card slots connected to the SDIO-/SDMMC-hardware of the processor. This is much faster then the alternative libraries which use SPI
 
 The following Pins are used:
 
