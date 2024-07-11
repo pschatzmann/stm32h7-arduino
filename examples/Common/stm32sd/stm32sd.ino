@@ -26,9 +26,8 @@ void setup()
   card.setDx(PC8, PC9, PC10, PC11);
   card.setCMD(PD2); // using PinName
   card.setCK(PC12);
-  card.init();
 
-
+  // init card
   Serial.print("\nInitializing SD card...");
   while(!card.init(SD_DETECT_NONE)) {
     if (!disp) {

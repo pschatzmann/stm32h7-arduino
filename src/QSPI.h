@@ -2,7 +2,6 @@
 #include "Stream.h"
 #include "W25Q64/quadspi.h"
 
-
 /***
  * C++ API for w25qxx flash memory which uses the STM32 API communicate with the
  * memory.
@@ -115,6 +114,9 @@ class QSPIClass : public Stream {
   /// the maximum written bytes are not persisted: you need to provide this
   /// yourself to the API
   void setAvailable(int max) { max_current_pos = max; }
+
+  /// wait for write operation to terminate
+  void flush() { QSPI_AutoPollingMemReady(); }
 
   /// Bootloader functionality: jump to the indicated address
   void jumpToAddress(uint32_t address = MEMORY_FLASH_ADDRESS) {
